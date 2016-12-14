@@ -25,8 +25,9 @@ public class Sorts{
 	int indexCurrentval = 0;
 	for (int i = 1; i < data.length; i++) {
 	    indexCurrentval = i;
-	    for(int j = i-1; j >= 0; j--) {
-		if (currentval > data[j]) {
+	    for(int j = i; j >= 0; j--) {
+		if (data[indexCurrentval] < data[j-1]) {
+		    
 		    
 }
 
