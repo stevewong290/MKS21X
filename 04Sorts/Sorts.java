@@ -10,16 +10,23 @@ public class Sorts{
   *@param data  the elements to be sorted.
   */
   public static void selectionSort(int[] data){
-      int ans[] = new int[data.length  ];
-      int currentLowestElement = data[0];
+      int indexCurrentLowestElement = 0;
       for (int i = 0; i < data.length; i++) {
 	  for (int j = 0; j < data.length; j++) {
-	      if (data[j] < currentLowestElement){
-		  currentLowestElement = data[j];
+	      if (data[j] < data[indexCurrentLowestElement]){
+		  indexCurrentLowestElement = j;
 	      }
 	  }
-	  ans[i] = currentLowestElement;
+	  data[j] = data[i];
+	  data[i] = data[indexCurrentLowestElement];
       }
   }
+    public static void insertionSort(int[] data){
+	int indexCurrentval = 0;
+	for (int i = 1; i < data.length; i++) {
+	    indexCurrentval = i;
+	    for(int j = i-1; j >= 0; j--) {
+		if (currentval > data[j]) {
+		    
 }
 
