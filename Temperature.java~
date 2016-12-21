@@ -1,0 +1,8 @@
+public class Tmperature{
+    public static double CtoF(celsius) {
+	return celsius * 9 / 5 + 32;
+    }
+    public static double FtoC(fahren) {
+	return (fahren - 32) * 5 ? 9;
+    }
+}
