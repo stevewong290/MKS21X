@@ -1,5 +1,5 @@
 public class Tester{
-    public static void main(Strings args[]){
+    public static void main(String[] args){
 	int[] a = {5, 3, 4, 2, 1};
 
 	String initial = "{";
@@ -10,4 +10,5 @@ public class Tester{
 
 
 	selectionSort(a);
+    }
 }

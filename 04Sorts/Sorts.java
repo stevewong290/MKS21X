@@ -11,14 +11,16 @@ public class Sorts{
      */
     public static void selectionSort(int[] data){
 	int indexCurrentLowestElement = 0;
+	int jholder = 0;
 	for (int i = 0; i < data.length; i++) {
 	    for (int j = 0; j < data.length; j++) {
 		if (data[j] < data[indexCurrentLowestElement]){
 		    indexCurrentLowestElement = j;
 		}
+		jholder = indexCurrentLowestElement;
 	    
-		data[j] = data[i];
 	    }
+	    data[jholder] = data[i];
 	    data[i] = data[indexCurrentLowestElement];
 	}
     }
@@ -45,14 +47,23 @@ public class Sorts{
 	}
 	System.out.println("[ " + ans + "]");
     }
-    public static void main(String args) {
-	int[] Test = {5, 4, 3, 2, 1};
-	print Test;
-	insertionSort(Test);
-	print Test;
+
+    public static void main(String[] args){
+	int[] a = {5, 3, 4, 2, 1};
+
+	String initial = "{";
+	for (int i = 0; i < a.length; i++) {
+	    initial += a[i] + " ";
+	}
+	System.out.println(initial + "}");
+
+
+	selectionSort(a);
+	System.out.println(initial + "}");
     }
+}
 
 		    
 		    
-}
+
 
