@@ -9,37 +9,76 @@ public class Sorts{
      *Upon completion, the elements of the array will be in increasing order.
      *@param data  the elements to be sorted.
      */
-    public static void selectionSort(int[] data){
+
+    
+    /*
+
+      public static void selectionSort(int[] data){
 	int indexCurrentLowestElement = 0;
-	int jholder = 0;
 	for (int i = 0; i < data.length; i++) {
 	    for (int j = 0; j < data.length; j++) {
 		if (data[j] < data[indexCurrentLowestElement]){
 		    indexCurrentLowestElement = j;
 		}
-		jholder = indexCurrentLowestElement;
 	    
+		data[j] = data[i];
 	    }
-	    data[jholder] = data[i];
 	    data[i] = data[indexCurrentLowestElement];
 	}
     }
+*/
+     public static void selectionSort(int[] data){
+      for(int i = 0; i < data.length; i++) {
+	  int init = data[i];
+	  int current = data[i];
+	  int place = i;
+	  for(int j = i + 1; j < data.length; j++) {
+	      if(data[j] < init) {
+		  init = data[j];
+		  place = j;
+	      }
+	  }
+	  data[i] = minnie;
+	  data[place] = current;	  
+      }
+  }
+    
     public static void insertionSort(int[] data){
-	int indexCurrentval = 0;
 	for (int i = 1; i < data.length; i++) {
-	    indexCurrentval = i;
-	    for(int j = i; j >= 0; j--) {
-		if (data[indexCurrentval] <= data[j-1]) {
-		    indexCurrentval = j;
-		    break;
+	    int j = i + 1;
+	    int current = data[j];
+	    int relativemin = j;
+	    for(int index = i; index >= 0; index--) {
+		if (current < data[index]) {
+		    relativemin = index;
+		    data[index + 1] = data[index]
 		}
-		data[j] = data[i];
 	    }
 	    
-	    data[i] = data[indexCurrentval];
+	    data[relativemin] = current;
 	}
     }
 
+    public static void bubbleSort(int[] data) {
+	boolean done = false;
+	for (int times = 0; times < data.length && !done ; times++) {
+	    int swapcount  = 0;
+	    for (int current = 0; current < data.length-times-1; current++) {
+		if (data[current] > data[current + 1]){
+		    int temp = data[current + 1];
+		    data[current + 1] = data[current];
+		    data[current] = temp;
+		    swapcount++;
+		}
+	    }
+	    if (swapcount == 0){
+		done = true;
+	    }
+	}
+
+    
+    }
+    /*
     public static void print(int[] data) {
 	String ans = "";
 	for (int i = 0; i < data.length; i++) {
@@ -47,21 +86,18 @@ public class Sorts{
 	}
 	System.out.println("[ " + ans + "]");
     }
-
-    public static void main(String[] args){
-	int[] a = {5, 3, 4, 2, 1};
-
-	String initial = "{";
-	for (int i = 0; i < a.length; i++) {
-	    initial += a[i] + " ";
-	}
-	System.out.println(initial + "}");
-
-
-	selectionSort(a);
-	System.out.println(initial + "}");
+    public static void main(String args) {
+	int[] Test = {5, 4, 3, 2, 1};
+	print Test;
+	insertionSort(Test);
+	print Test;
     }
+    */
+		    
+		    
 }
+
+
 
 		    
 		    
